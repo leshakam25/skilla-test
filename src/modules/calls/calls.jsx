@@ -1,11 +1,34 @@
 import React from 'react';
-import {Box} from "@mui/material";
+import {Box, Grid} from "@mui/material";
+import DatePicker from "./components/date-picker/date-picker.jsx";
+import BalanceButton from "./components/balance-button/balance-button.jsx";
 
 const Calls = () => {
     return (
-        <Box>
-            Calls
-        </Box>
+        <Grid
+            container
+        >
+            <Grid
+                item
+                xs={12}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'right',
+                    alignItems: 'center',
+                    flexFlow: 'row nowrap'
+                }}
+            >
+                <BalanceButton/>
+                <DatePicker/>
+            </Grid>
+            <Grid
+                item
+                xs={12}
+                minHeight="90vh"
+            >
+                Calls
+            </Grid>
+        </Grid>
     );
 };
 
