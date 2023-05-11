@@ -1,7 +1,8 @@
 import React from 'react';
-import {Box, Grid} from "@mui/material";
+import {Box} from "@mui/material";
 import Logo from "./components/logo/logo.jsx";
 import Menu from "./components/menu/menu.jsx";
+import IconSelector from "./components/menu/icon-selector.jsx";
 
 const Sidebar = () => {
     return (
@@ -17,6 +18,7 @@ const Sidebar = () => {
 
             }}
         >
+            <IconSelector/>
             <Logo/>
             <Menu/>
         </Box>

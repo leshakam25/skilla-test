@@ -15,7 +15,7 @@ const Menu = () => {
         >
             {menuData && menuData.map((el, i) => (
                 <MenuItem
-                    key={i.id}
+                    key={i}
                     el={el}
                 />
             ))}

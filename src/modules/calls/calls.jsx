@@ -1,7 +1,8 @@
 import React from 'react';
-import {Box, Grid} from "@mui/material";
+import {Grid, Table} from "@mui/material";
 import DatePicker from "./components/date-picker/date-picker.jsx";
 import BalanceButton from "./components/balance-button/balance-button.jsx";
+import CallsTable from "./components/calls-table/calls-table.jsx";
 
 const Calls = () => {
     return (
@@ -26,7 +27,7 @@ const Calls = () => {
                 xs={12}
                 minHeight="90vh"
             >
-                Calls
+                <CallsTable/>
             </Grid>
         </Grid>
     );
