@@ -5,7 +5,6 @@ import CallsTableHead from "./calls-table-head.jsx";
 import Filter from "./calls-table-filter/filter.jsx";
 import axios from "axios";
 
-
 const CallsTable = () => {
     // Базовый адрес
     const api = 'https://api.skilla.ru/mango/getList';
@@ -43,7 +42,7 @@ const CallsTable = () => {
                     pr: '40px'
                 }}
             >
-                <CallsTableHead/>
+                <CallsTableHead />
                 {callsList &&
                     callsList.results &&
                     callsList.results.map((el, i) => (

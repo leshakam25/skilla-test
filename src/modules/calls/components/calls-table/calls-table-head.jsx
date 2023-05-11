@@ -1,74 +1,64 @@
 import React from 'react';
-import {Box, Checkbox, Typography} from "@mui/material";
-
-
-const tableHeads = [
-    {
-        id: 0,
-        name: "Тип",
-        width:'60px'
-    },
-    {
-        id: 1,
-        name: "Время",
-        width:'90px'
-
-    },
-    {
-        id: 2,
-        name: "Сотрудник",
-        width:'120px'
-    },
-    {
-        id: 3,
-        name: "Звонок",
-        width:'300px'
-    },
-    {
-        id: 4,
-        name: "Источник",
-        width:'220px'
-    },
-    {
-        id: 5,
-        name: "Оценка",
-        width:'420px'
-    },
-    {
-        id: 6,
-        name: "Длительность",
-    }
-]
+import {Avatar, Box, Checkbox, Grid, Typography} from "@mui/material";
 
 const CallsTableHead = () => {
     return (
-        <Box
-        sx={{
-            display:'flex',
-            flexFlow:'row nowrap',
-            alignItems:'center',
-            height:'65px',
-            justifyContent:'left'
-        }}
+        <Grid container
+              sx={{
+                  height: '65px',
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+              }}
         >
-            <Checkbox />
-            {tableHeads && tableHeads.map((el,i)=>(
-                <Typography
-                key={i+el.id}
-                sx={{
-                    fontFamily: "SF Pro Display",
-                    fontSize: "14px",
-                    fontWeight: 400,
-                    lineHeight: "21px",
-                    letterSpacing: "0em",
-                    color: '#899CB1',
-                    width: el.width
-                }}
-                >
-                    {el.name}
-                </Typography>
-            ))}
-        </Box>
+            <Grid
+                xs={0.35}
+                sx={{}}
+            >
+                <Checkbox/>
+            </Grid>
+            <Grid
+                xs={0.55}
+                sx={{}}
+            >
+                <Typography>Тип</Typography>
+            </Grid>
+            <Grid
+                xs={0.85}
+                sx={{}}
+            >
+                <Typography>Время</Typography>
+            </Grid>
+            <Grid
+                xs={1.4}
+                sx={{}}
+            >
+                <Typography>Сотрудник</Typography>
+            </Grid>
+            <Grid
+                xs={3}
+                sx={{}}
+            >
+                <Typography>Звонок</Typography>
+            </Grid>
+            <Grid
+                xs={1.8}
+                sx={{}}
+            >
+                <Typography>Источник</Typography>
+            </Grid>
+            <Grid
+                xs={1}
+                sx={{}}
+            >
+                <Typography>Оценка</Typography>
+            </Grid>
+            <Grid
+                flexgrow={1}
+            >
+                <Typography>Длительность</Typography>
+            </Grid>
+        </Grid>
     );
 };
 

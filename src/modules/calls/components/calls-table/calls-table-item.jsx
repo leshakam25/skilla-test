@@ -1,73 +1,74 @@
 import React from 'react';
-import {Avatar, Box, Checkbox} from "@mui/material";
+import {Avatar, Box, Checkbox, Grid} from "@mui/material";
 import CallsTypeSelector from "./calls-type-selector.jsx";
 
 const CallsTableItem = (el) => {
     return (
-        <Box
-            sx={{
-                height: '65px',
-                display: 'flex',
-                flexFlow: 'row nowrap',
-                justifyContent: 'left',
-                alignItems: 'center',
-            }}
+        <Grid container
+              sx={{
+                  height: '65px',
+                  width:'100%',
+                  display: 'flex',
+                  alignItems: 'center',
+              }}
         >
-            <Checkbox/>
-            <Box
+            <Grid
+                xs={0.35}
                 sx={{
-                    width: '40px',
-                    m:'0 auto',
-                    ml:1
+                }}
+            >
+            <Checkbox/>
+            </Grid>
+            <Grid
+                xs={0.55}
+                sx={{
                 }}
             >
                 <CallsTypeSelector
                     el={el.el.in_out}
                 />
-            </Box>
-            <Box
+            </Grid>
+            <Grid
+                xs={0.85}
                 sx={{
-                    width: '90px',
-                    m:'0 auto',
                 }}
             >
                 {el.el.date.substring(11)}
-            </Box>
-            <Box
+            </Grid>
+            <Grid
+                xs={1.4}
                 sx={{
-                    m:'0 auto',
-                    width: '90px'
                 }}
             >
                 <Avatar src={el.el.person_avatar}/>
-            </Box>
-            <Box
+            </Grid>
+            <Grid
+                xs={3}
                 sx={{
-                    width: '250px',
-
                 }}
             >
                 +{el.el.partner_data.phone}
-            </Box>
-            <Box
+            </Grid>
+            <Grid
+                xs={1.8}
                 sx={{
-                    width: '220px'
                 }}
             >
                 {el.el.partner_data.name}
-            </Box>
-            <Box>
-                {el.results}
-            </Box>
-            <Box
+            </Grid>
+            <Grid
+                xs={1}
                 sx={{
-                    width: '420px'
                 }}
             >
+                {el.results}
+            </Grid>
+            <Grid
+                flexgrow={1}
+            >
                 {el.time}
-            </Box>
-            {/*<button onClick={() => console.log("el", el.el)}>log</button>*/}
-        </Box>
+            </Grid>
+        </Grid>
     );
 };
 

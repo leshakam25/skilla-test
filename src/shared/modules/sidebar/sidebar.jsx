@@ -15,7 +15,6 @@ const Sidebar = () => {
                 alignItems: "flex-start",
                 boxShadow: 1,
                 bgcolor: "#091335",
-
             }}
         >
             <IconSelector/>
