@@ -18,7 +18,11 @@ const User = () => {
     };
 
     return (
-        <Box>
+        <Box
+            sx={{
+                color: "#899CB1"
+            }}
+        >
             <Box
                 sx={{
                     display: 'flex',
@@ -38,7 +42,10 @@ const User = () => {
                     <Typography>
                         ИП Сидорова Александра Михайловна
                     </Typography>
-                    <IconButton>
+                    <IconButton
+                        size={'small'}
+                        sx={{mr: 1}}
+                    >
                         <KeyboardArrowDownIcon/>
                     </IconButton>
                 </Box>
@@ -50,11 +57,12 @@ const User = () => {
                         alignItems: 'center',
                     }}
                 >
-                    <IconButton sx={{p: 0}}>
+                    <IconButton>
                         <Avatar alt="Remy Sharp" src=''/>
                     </IconButton>
                     <Tooltip title="Open settings">
                         <IconButton
+                            size={'small'}
                             onClick={handleOpenUserMenu}
                         >
                             <KeyboardArrowDownIcon/>
@@ -80,7 +88,12 @@ const User = () => {
             >
                 {settings.map((setting) => (
                     <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{setting}</Typography>
+                        <Typography
+                            textAlign="center"
+                            color={"#899CB1"}
+                        >
+                            {setting}
+                        </Typography>
                     </MenuItem>
                 ))}
             </Menu>
