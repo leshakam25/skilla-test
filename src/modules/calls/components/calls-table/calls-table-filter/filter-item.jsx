@@ -1,28 +1,52 @@
 import React from 'react';
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import {Button, Typography} from "@mui/material";
+import {FormControl, InputBase, InputLabel, MenuItem, Select, styled} from "@mui/material";
+
+const BootstrapInput = styled(InputBase)(({theme}) => ({
+    '& .MuiInputBase-input': {
+        width: '80px',
+        position: 'relative',
+        backgroundColor: 'inherit',
+        fontSize: 16,
+        fontFamily: [
+            'Roboto',
+        ].join(','),
+    },
+}));
 
 const FilterItem = ({el}) => {
+    const [value, setValue] = React.useState('');
+
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    };
+
     return (
-        <Button
-            variant={'text'}
-            sx={{
-                fontFamily: "SF Pro Display",
-                fontSize: "14px",
-                fontWeight: 400,
-                lineHeight: "21px",
-                letterSpacing: "0em",
-                color: '#5E7793',
-                mx:"8px",
-                textTransform:'none',
-                opacity:0.87
-            }}
-        >
-            <Typography>
+        <FormControl>
+            <InputLabel
+                id="demo-simple-select-standard-label"
+            >
                 {el.name}
-            </Typography>
-            <KeyboardArrowDownIcon/>
-        </Button>
+            </InputLabel>
+            <Select
+                labelId="demo-simple-select-standard-label"
+                variant={'filled'}
+                value={value}
+                onChange={handleChange}
+                sx={{
+                    minWidth: '130px',
+                }}
+                // input={<BootstrapInput/>}
+            >
+                {el && el.list && el.list.map((el, i) => (
+                    <MenuItem
+                        key={i}
+                        value={el.value}
+                    >
+                        {el.title}
+                    </MenuItem>
+                ))}
+            </Select>
+        </FormControl>
     );
 };
 

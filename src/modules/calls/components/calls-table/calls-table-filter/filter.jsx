@@ -6,7 +6,21 @@ import SearchIcon from '@mui/icons-material/Search';
 const filters = [
     {
         id: 0,
-        name: "Все типы"
+        name: "Все типы",
+        list:[
+            {
+                title:"Входящие",
+                value:'1'
+            },
+            {
+                title:"Исходящие",
+                value:'0'
+            },
+            {
+                title:"Все",
+                value:' '
+            }
+        ]
     },
     {
         id: 1,

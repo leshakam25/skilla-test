@@ -17,7 +17,7 @@ const CallsTableItem = (el) => {
                 sx={{
                 }}
             >
-            <Checkbox/>
+                <Checkbox/>
             </Grid>
             <Grid
                 xs={0.55}
